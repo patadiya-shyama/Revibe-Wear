@@ -56,6 +56,9 @@
       </span>
     </span>
   </button>
+  {% unless can_add_to_cart %}
+    <p>Back in stock soon.</p>
+  {% endunless %}
 </add-to-cart-component>
 
 {% stylesheet %}

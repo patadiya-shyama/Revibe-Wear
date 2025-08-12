@@ -15,19 +15,24 @@
     data-view-transition-type="product-details"
   {% endif %}
 >
-  {% capture children %}
-    <div class="view-product-title">
-      <a
-        href="{{ product.selected_or_first_available_variant.url }}"
-        class="link"
-      >
-        {{- product.title }}
-      </a>
-    </div>
-    {% content_for 'blocks' %}
-  {% endcapture %}
+  <div class="customer msg">
+    {% if customer %}
+      <p>✅ You bought this before</p>
+    {% endif %}
+    {% capture children %}
+      <div class="view-product-title">
+        <a
+          href="{{ product.selected_or_first_available_variant.url }}"
+          class="link"
+        >
+          {{- product.title }}
+        </a>
+      </div>
+      {% content_for 'blocks' %}
+    {% endcapture %}
 
-  {% render 'group', children: children, settings: block_settings, shopify_attributes: block.shopify_attributes %}
+    {% render 'group', children: children, settings: block_settings, shopify_attributes: block.shopify_attributes %}
+  </div>
 </div>
 
 {% stylesheet %}
