@@ -106,10 +106,6 @@
   {%- endif -%}
 </span>
 
-{% if inventory_quantity > 0 and inventory_quantity <= 10 %}
-  <div id="inventory-message">Only {{ variant.inventory_quantity }} left in stock.</div>
-{% endif %}
-
 {% if block_settings.show_pickup_availability %}
   <script
     src="{{ 'local-pickup.js' | asset_url }}"

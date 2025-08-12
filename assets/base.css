@@ -4273,3 +4273,14 @@ text-component {
     font-size: max(1rem, 100%);
   }
 }
+#inventory-message {
+  color: red;
+}
+#stock-status {
+  color: green;
+}
+#inventory-message, 
+#stock-status {
+  font-weight: bold;
+  padding-top: 15px;
+}
